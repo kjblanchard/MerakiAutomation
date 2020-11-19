@@ -1,0 +1,32 @@
+@page "/counter"
+
+<h1>Counter</h1>
+
+<p>Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+@if (hidden)
+{
+    <audio muted>
+        <source src="/crooner2.mp3"/>
+    </audio>
+}
+else
+{
+    <audio autoplay>
+        <source src="/Files/mk64_mario07.wav"/>
+    </audio>
+}
+
+@code {
+    private int currentCount = 0;
+
+    bool hidden = true;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+        hidden = !hidden;
+    }
+
+}

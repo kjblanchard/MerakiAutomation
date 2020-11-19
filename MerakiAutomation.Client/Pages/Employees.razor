@@ -1,0 +1,35 @@
+﻿@page "/employee"
+
+
+<h1>Employees</h1>
+
+<p>This component demonstrates fetching data from a service.</p>
+
+@if (_employees == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Temp. (C)</th>
+                <th>Temp. (F)</th>
+                <th>Summary</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var employee in _employees)
+            {
+                <tr>
+                    <td>@employee.Id.ToString()</td>
+                    <td>@employee.Name</td>
+                    <td>@employee.Title</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
