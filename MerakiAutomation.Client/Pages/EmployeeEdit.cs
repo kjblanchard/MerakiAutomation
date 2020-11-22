@@ -1,10 +1,7 @@
-﻿using System;
-using System.Diagnostics;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using MerakiAutomation.Client.Services;
 using MerakiAutomation.Domain;
 using Microsoft.AspNetCore.Components;
-using MerakiAutomation.Domain;
 
 namespace MerakiAutomation.Client.Pages
 {

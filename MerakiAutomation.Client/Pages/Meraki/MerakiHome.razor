@@ -1,0 +1,6 @@
+﻿@page "/meraki"
+@attribute [Authorize(Policy = AuthorizationPolicyStrings.MerakiViewGroups )]
+
+<h3>Meraki Homepage</h3>
+
+<OrganizationsComponent/>

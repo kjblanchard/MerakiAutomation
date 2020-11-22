@@ -3,9 +3,9 @@ using MerakiAutomation.Client.Services;
 using MerakiAutomation.Domain.MerakiModels;
 using Microsoft.AspNetCore.Components;
 
-namespace MerakiAutomation.Client.Pages.Meraki
+namespace MerakiAutomation.Client.Shared.Components.Meraki
 {
-    public partial class Organizations
+    public partial class OrganizationsComponent
     {
         #region Configuration
 

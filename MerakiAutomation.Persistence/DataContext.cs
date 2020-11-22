@@ -25,9 +25,10 @@ namespace MerakiAutomation.Persistence
                         new Employee {Id = 3, Name = "Gabe", Title = "Manager"}
                     );
             }
-        
+            
 
-        #region Methods
+
+            #region Methods
 
         #endregion
     }

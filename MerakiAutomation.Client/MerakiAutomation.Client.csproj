@@ -17,4 +17,8 @@
     <ProjectReference Include="..\MerakiAutomation.Domain\MerakiAutomation.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Components\Meraki\OrganizationsComponent.razor" />
+  </ItemGroup>
+
 </Project>
