@@ -8,7 +8,8 @@ namespace MerakiAutomation.Client.Pages.Meraki
     public partial class MerakiHome
     {
         #region Configuration
-        
+
+        public Organization SelectedOrgParent { get; set; } = new Organization();
 
         #endregion
     }

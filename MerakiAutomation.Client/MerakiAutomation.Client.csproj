@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <_ContentIncludedByDefault Remove="Components\Meraki\OrganizationsComponent.razor" />
+    <_ContentIncludedByDefault Remove="Shared\Components\Meraki\OrganizationsComponent.razor" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using MerakiAutomation.Client.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -66,7 +65,6 @@ namespace MerakiAutomation.Client
             services.AddControllersWithViews(options => { });
 
             //singletons
-            services.AddSingleton<WeatherForecastService>();
 
             //http clients
             services.AddHttpClient<IEmployeeService, EmployeeService>(client =>

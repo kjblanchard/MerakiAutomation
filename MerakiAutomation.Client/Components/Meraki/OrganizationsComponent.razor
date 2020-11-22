@@ -1,0 +1,36 @@
+﻿@using MerakiAutomation.Domain.MerakiModels
+@attribute [Authorize(Policy = AuthorizationPolicyStrings.MerakiViewGroups )]
+
+<h3>OrganizationsComponent</h3>
+
+@if (_organizations == null)
+{
+    <p>
+        <em>Loading...</em>
+    </p>
+}
+else
+{
+    <section class="organizations-form">
+        <h1 class="page-title">Select the organization you wish to manage</h1>
+        <h2>@SelectedOrganization.Name hello</h2>
+        <EditForm Model="@SelectedOrganization" OnValidSubmit="@HandleValidSubmit" OnInvalidSubmit="@HandleInvalidSubmit">
+            <div class="form-group row">
+                <label>
+                    Organization Name:
+                    <InputSelect @bind-Value="@SelectedOrganization.Name">
+                        <option value="">Select Org:</option>
+                        @foreach (var org in _organizations)
+                        {
+                            <option value="@org.Name">@org.Name</option>
+                        }
+                    </InputSelect>
+                </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary edit-btn">Save</button>
+        </EditForm>
+
+
+    </section>
+}

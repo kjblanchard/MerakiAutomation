@@ -3,4 +3,10 @@
 
 <h3>Meraki Homepage</h3>
 
-<OrganizationsComponent/>
+<OrganizationsComponent @bind-SelectedOrganization="SelectedOrgParent"/>
+
+@if (SelectedOrgParent.Name !=null)
+{
+    <h3>Good job selecting an org you idiot, now select a network</h3>
+    <NetworksComponent/>
+}
