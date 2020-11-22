@@ -8,5 +8,11 @@
 @if (SelectedOrgParent.Name !=null)
 {
     <h3>Good job selecting an org you idiot, now select a network</h3>
-    <NetworksComponent/>
+    <NetworksComponent @bind-SelectedNetwork="SelectedNetworkParent" OrgToLookup="@SelectedOrgParent.Id" />
+}
+
+@if (SelectedNetworkParent.name != null)
+{
+    <h3>Wow, you even selected a network. Keep it up!</h3>
+    <DevicesListComponent NetworkToLookup="@SelectedNetworkParent.id"/>
 }

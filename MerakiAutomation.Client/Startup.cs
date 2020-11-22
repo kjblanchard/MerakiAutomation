@@ -17,7 +17,7 @@ namespace MerakiAutomation.Client
         public const string MerakiViewGroups = "MerakiView";
         public const string MerakiAdminGroups = "MerakiAdmin";
     }
-    
+
 
     public class Startup
     {
@@ -27,6 +27,8 @@ namespace MerakiAutomation.Client
         /// Used throughout the app to reference the authorization policies.  This is created in startup.cs
         /// </summary>
         private readonly string _dbUri = "https://localhost:5001/";
+
+        private readonly string _merakiBaseUri = "https://api.meraki.com/api/v0/";
 
         private readonly string _groupString = "groups";
 
@@ -69,7 +71,14 @@ namespace MerakiAutomation.Client
             //http clients
             services.AddHttpClient<IEmployeeService, EmployeeService>(client =>
                 client.BaseAddress = new Uri(_dbUri));
-            services.AddHttpClient<IMerakiOrganizationQuery, MerakiOrganizationQuery>();
+            services.AddHttpClient<IMerakiOrganizationQuery, MerakiOrganizationQuery>(client =>
+                client.BaseAddress = new Uri(_merakiBaseUri));
+            
+            services.AddHttpClient<IMerakiNetworkQuery, MerakiNetworkQuery>(client =>
+                client.BaseAddress = new Uri(_merakiBaseUri));
+            
+            services.AddHttpClient<IMerakiDeviceQuery, MerakiDeviceQuery>(client =>
+                client.BaseAddress = new Uri(_merakiBaseUri));
 
 
             services.AddAuthentication(AzureADDefaults.AuthenticationScheme)

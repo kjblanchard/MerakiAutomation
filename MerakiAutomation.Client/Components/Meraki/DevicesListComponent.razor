@@ -1,0 +1,23 @@
+﻿@attribute [Authorize(Policy = AuthorizationPolicyStrings.MerakiViewGroups)]
+
+
+<h3>DevicesListComponent</h3>
+
+@if (_devices == null)
+{
+    <p>
+        <em>Loading...</em>
+    </p>
+}
+else
+{
+    <section>
+        @foreach (var device in _devices)
+        {
+            <div>
+                @device.name <DeviceOptionsComponent DeviceToDisplay="@device"/>
+            </div>
+        }
+
+    </section>
+}

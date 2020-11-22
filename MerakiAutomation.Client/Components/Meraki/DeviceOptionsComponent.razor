@@ -1,0 +1,14 @@
+﻿<AuthorizeView Policy="@AuthorizationPolicyStrings.MerakiAdminGroups" Context="authContext" >
+    <EditForm Model="@DeviceToDisplay" OnValidSubmit="@HandleValidSubmit" OnInvalidSubmit="@HandleInvalidSubmit">
+        <div class="form-group row">
+            <label>
+                Network Name:
+                <InputText @bind-Value="@DeviceToDisplay.name">
+
+                </InputText>
+            </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary edit-btn">Update Name</button>
+    </EditForm>
+</AuthorizeView>

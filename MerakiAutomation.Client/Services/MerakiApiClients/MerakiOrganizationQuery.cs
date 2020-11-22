@@ -34,8 +34,8 @@ namespace MerakiAutomation.Client.Services
         public async Task<Organization[]> GetOrganizationsAsync()
         {
             var key = _key;
-            var jsonString = await _httpClient.GetStringAsync("https://api.meraki.com/api/v0/organizations");
-            // var jsonString = await _httpClient.GetStringAsync("https://swapi.dev/api/people/1"); 
+            // var jsonString = await _httpClient.GetStringAsync("https://api.meraki.com/api/v0/organizations");
+            var jsonString = await _httpClient.GetStringAsync("organizations");
             return JsonConvert.DeserializeObject<Organization[]>(jsonString);
         }
 

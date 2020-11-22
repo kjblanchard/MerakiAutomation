@@ -9,7 +9,8 @@ namespace MerakiAutomation.Client.Pages.Meraki
     {
         #region Configuration
 
-        public Organization SelectedOrgParent { get; set; } = new Organization();
+        private Organization SelectedOrgParent { get; set; } = new Organization();
+        public Network SelectedNetworkParent { get; set; } = new Network();
 
         #endregion
     }

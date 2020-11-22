@@ -1,2 +1,35 @@
-﻿@attribute [Authorize(Policy = AuthorizationPolicyStrings.MerakiViewGroups )]
+﻿@attribute [Authorize(Policy = AuthorizationPolicyStrings.MerakiViewGroups)]
 <h3>NetworksComponent</h3>
+
+
+@if (_networks == null)
+{
+    <p>
+        <em>Loading...</em>
+    </p>
+}
+else
+{
+    <section class="organizations-form">
+        <h1 class="page-title">Select the organization you wish to manage</h1>
+        <h2>@SelectedNetwork.name hello</h2>
+        <EditForm Model="@SelectedNetwork" OnValidSubmit="@HandleValidSubmit" OnInvalidSubmit="@HandleInvalidSubmit">
+            <div class="form-group row">
+                <label>
+                    Network Name:
+                    <InputSelect @bind-Value="@SelectedNetwork.name">
+                        <option value="">Select Org:</option>
+                        @foreach (var network in _networks)
+                        {
+                            <option value="@network.name">@network.name</option>
+                        }
+                    </InputSelect>
+                </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary edit-btn">Save</button>
+        </EditForm>
+
+
+    </section>
+}
